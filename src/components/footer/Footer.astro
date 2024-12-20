@@ -1,0 +1,37 @@
+---
+import About from "./_components/About.astro"
+import Company from "./_components/Company.astro"
+import Copyright from "./_components/Copyright.astro"
+---
+<div class="footer">
+    <div class="information-wrapper">
+        <div class="logo">General</div>
+        <div class="company-info">
+            <About/>
+            <Company/>
+        </div>
+    </div>
+    <Copyright/>
+</div>
+
+<style lang="scss">
+    .information-wrapper{
+        display: flex;
+        justify-content: center;
+        background-color: #333333;
+        margin: 0 auto;
+        padding-block: 80px;
+        
+        > .logo{
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            color: #828282;
+            width: 430px;
+        }
+
+        > .company-info{
+            max-width: 816px;
+        }
+    }
+</style>

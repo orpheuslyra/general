@@ -1,0 +1,36 @@
+---
+import {companyInfo} from "../../../constants/about/companyInfo"
+---
+
+<div class="company-info-wrapper">
+    <table class="company-info">
+        <tbody>
+            {companyInfo.map((item) => (
+            <tr>
+                <th class="info-label">{item.label}</th>
+                <td class="info-data">{item.value}</td>
+            </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+
+<style lang="scss">
+    .company-info{
+        width: 100%;
+        border-top: 1px dotted #ccc;
+        >tbody, th, td{
+            border-bottom: 1px dotted #ccc;
+            border-collapse: collapse;
+            padding-block: 27px;
+        }
+    }
+    .info-label{
+        color: white;
+        text-align: left;
+    }
+    .info-data{
+        color: white;
+    }
+</style>
+

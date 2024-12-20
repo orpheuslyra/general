@@ -1,0 +1,28 @@
+$blue: #002d5e;
+$text-blue: #001d41;
+
+@mixin typography-pc-title-h1 {
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1;
+  color: $text-blue;
+}
+
+@mixin typography-pc-title-h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  color: $text-blue;
+}
+
+@mixin typography-pc-title-h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: $text-blue;
+}
+
+@mixin typography-pc-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: $text-blue;
+}

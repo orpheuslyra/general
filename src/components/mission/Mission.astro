@@ -1,0 +1,61 @@
+---
+import IllustCard from "../parts/card/IllustCard.astro";
+import employeeImage from "../../assets/mission/employee.png";
+import capitalImage from "../../assets/mission/capital.png";
+import benefitsImage from "../../assets/mission/benefits.png";
+---
+
+<section class="mission">
+    <div class="section-title">
+        <h1>Mission</h1>
+
+        <h2>BPOで日本を豊かに。</h2>
+        <h3>ゼネラルは、BPOとAI技術の活用で社会の抱える課題を解決します。</h3>
+    </div>
+
+<div class="mission-card-wrapper">
+    <IllustCard title="労働力不足" description="社労士法人で培った専門性と情報技術の進歩を活用し、企業の給与・総務業務の安定化・自動化・最小化でコア業務集中を実現。" imagePath={employeeImage} />
+    <IllustCard title="福利厚生と資産形成" description="給与総務データを経営や従業員資産形成に活用し、金融リテラシーの向上、企業の経営課題を解決。" imagePath={benefitsImage} />
+    <IllustCard title="人的資本経営" description="ワーケーションの推進により地方地域の働きやすい就業環境と雇用の確保を実現。" imagePath={capitalImage} />
+</div> 
+</section>
+
+<style lang="scss">
+    .mission{
+
+    }
+
+    .section-title{
+
+    }
+
+    h1{
+        @include typography-pc-title-h1;
+        position: relative;
+        margin: 80px 0;
+        &::after{
+            content:'ミッション';
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            @include typography-pc-subtitle;
+        }
+    }
+    
+    h2{
+        @include typography-pc-title-h2;
+    }
+
+    h3 {
+        @include typography-pc-title-h3;
+    }
+
+    .sub-title{
+        @include typography-pc-subtitle;
+    }
+
+    .mission-card-wrapper{
+        display: flex;
+        gap: 20px;
+    }
+</style>
