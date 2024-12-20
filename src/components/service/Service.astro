@@ -1,0 +1,28 @@
+---
+---
+
+<section id="service">
+
+    <div class="section-title">
+        <h1>Service</h1>
+    </div>
+    <div class="service-visual">
+        
+    </div>
+
+</section>
+
+<style lang="scss">
+    h1{
+        @include typography-pc-title-h1;
+        position: relative;
+        margin: 80px 0;
+        &::after{
+            content:'サービス';
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            @include typography-pc-subtitle;
+        }
+    }
+</style>
