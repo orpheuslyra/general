@@ -8,4 +8,6 @@ Astro
 
 pnpm dev
 
-## その他
+## デプロイ方法
+
+Github Actions による FTP サーバへのデプロイ
