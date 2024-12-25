@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import solid from "@astrojs/solid-js";
 
 export default defineConfig({
+  integrations: [solid()],
   vite: {
     resolve: {
       alias: {
-        "@": "./src",
+        "@": new URL("./src", import.meta.url).pathname,
       },
     },
     css: {
