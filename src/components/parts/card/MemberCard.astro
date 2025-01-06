@@ -1,0 +1,57 @@
+---
+import type { ImageMetadata } from "astro";
+import Image from "astro/components/Image.astro";
+
+interface Props {
+    imagePath:ImageMetadata;
+    post?:string;
+    name:string;
+    company:string;
+    role:string;
+};
+
+const props:Props = Astro.props;
+---
+<div class="member-wrapper">
+    <Image src={props.imagePath} width={140} height={140} alt="" class="member-image"/>
+    <div class="name">
+        <p>
+            {props.post && (<span class="post">{props.post}</span>)}
+            {props.name}
+        </p>
+    </div>
+    <div class="compamy">{props.company}</div>
+    <div class="role">{props.role}</div>
+</div>
+
+<style lang="scss">
+    .member-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        max-width: 286px;
+        padding: 40px 24px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        > .member-image{
+            align-self: center;
+            margin-bottom: calc(24px - 5px);
+        }
+    }
+
+    .post{
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .name{
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    @include max("tab"){
+        .post{
+            display: block;
+        }
+    }
+</style> 

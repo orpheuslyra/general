@@ -1,0 +1,30 @@
+---
+import StepCard from "./StepCard.astro"
+
+import {steps} from "../data/serviceStep"
+
+---
+
+<div class="step-wrapper">
+    {steps.map((step, index)=>(
+        <StepCard 
+            stepNo={index+1} 
+            title={step.title} 
+            description={step.description} 
+            imagePath={step.imagePath}
+        />
+    ))}
+</div>
+
+<style lang="scss">
+    .step-wrapper{
+        display: flex;
+        gap: 20px;
+    }
+
+    @include max("tab"){
+        .step-wrapper{
+            flex-direction: column;
+        }
+    }
+</style>

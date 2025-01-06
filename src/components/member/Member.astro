@@ -1,0 +1,36 @@
+---
+import MemberCard from "../parts/card/MemberCard.astro";
+import {memberList} from "./data/memberData";
+import HeadingOne from "../parts/heading/HeadingOne.astro";
+import HeadingThree from "../parts/heading/HeadingThree.astro";
+
+---
+<HeadingOne heading="Member" sub="メンバー" />
+<HeadingThree heading="社労士法人サトー経営陣に加え、地域大手社労士、損害保険業界、AIエンジニアが参加。" />
+
+<div class="member-list">
+{memberList.map((member)=>(
+    <MemberCard 
+        imagePath={member.imagePath}
+        name={member.name}
+        role={member.role}
+        post={member.post}
+        company={member.company}
+        />))}
+</div>
+
+<style lang="scss">
+    .member-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 34px;
+        margin-top: 43px;
+    }
+
+    @include max("tab"){
+        .member-list{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+</style>

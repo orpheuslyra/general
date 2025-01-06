@@ -1,0 +1,24 @@
+@use "./responsive.scss" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+body {
+  font-family: "Noto sans JP";
+}
+
+.tab-only {
+  @include max("tab") {
+    display: none;
+  }
+}
+
+.pc-only {
+  @include max("pc") {
+    display: none;
+  }
+}
+
+.pc-none {
+  @include min("pc") {
+    display: none;
+  }
+}

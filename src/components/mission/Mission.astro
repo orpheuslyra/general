@@ -1,0 +1,55 @@
+---
+import IllustCard from "../../components/parts/card/IllustCard.astro";
+
+import {missions} from "./data/missions";
+import HeadingOne from "../parts/heading/HeadingOne.astro";
+import HeadingThree from "../parts/heading/HeadingThree.astro";
+---
+
+    <div class="section-title">
+        <HeadingOne heading="Mission" sub="ミッション" />
+        <div class="mission-title">
+            BPOで<br class="pc-none"/>日本を豊かに。
+        </div>
+        <HeadingThree heading="ゼネラルは、BPOとAI技術の活用で社会の抱える課題を解決します。" />
+    </div>
+    <div class="mission-card-wrapper">
+        {missions.map((mission)=>(
+            <IllustCard title={mission.title} description={mission.description} imagePath={mission.imagePath}/>
+        ))}
+    </div>  
+
+<style lang="scss">
+
+    #mission{
+        background-image: url("../../assets/background/background1.jpg");
+        background-position: top center;
+    }
+
+    .section-title{
+        margin-block: 56px;
+    }
+
+    .mission-title {
+        font-size: 60px;
+        font-weight: 700;
+        color: $text-blue;
+    }
+
+    .mission-card-wrapper{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    @include max("tab"){
+        .mission-card-wrapper{
+            flex-direction: column;
+        }
+
+        .mission-title{
+            font-size: 36px;
+        }
+    }
+</style>
