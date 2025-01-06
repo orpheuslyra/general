@@ -1,0 +1,32 @@
+---
+interface Props {
+    heading:string;
+    sub:string;
+}
+
+const props : Props = Astro.props;
+
+---
+
+<h1 style={`--sub-text: '${props.sub}'`}>{props.heading}</h1>
+
+<style lang="scss">
+        h1{
+        @include typography-pc-title-h1;
+        position: relative;
+        margin-bottom: 80px;
+        &::after{
+            content: var(--sub-text);
+            position: absolute;
+            left: 0;
+            bottom: -30px;
+            @include typography-pc-subtitle;
+        }
+    }
+
+    @include max("pc"){
+        h1{
+            @include typography-sp-title-h1;
+        }
+    }
+</style>

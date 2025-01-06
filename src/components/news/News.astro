@@ -1,0 +1,59 @@
+---
+import {newslist} from "./data/newsData";
+import linkIcon from "@/assets/common/link-icon.svg";
+import Image from "astro/components/Image.astro";
+import HeadingOne from "../parts/heading/HeadingOne.astro";
+
+const formatDate = (date: Date): string => {
+    return `${date.getFullYear()}.${(date.getMonth() + 1).toString().padStart(2, "0")}.${date.getDate().toString().padStart(2, "0")}`;
+}
+---
+
+<HeadingOne heading="News" sub="ニュース" />
+
+<ul class="news-list">
+    {newslist.map((news)=>(
+        news.link ? (
+            <a href={news.link} class="news-link" target="_blank">
+                <li class="news-item">
+                    <div class="news-date">{formatDate(news.date)}</div>
+                    <div class="news-title">{news.title}</div>
+                    <Image class="link-icon" src={linkIcon} width={20} height={20} alt="" />
+                </li>
+            </a>
+        ):(
+        <li class="news-item">
+            <div class="news-date">{formatDate(news.date)}</div>
+            <div class="news-title">{news.title}</div>
+        </li>
+        )
+    ))}
+</ul>
+
+
+<style lang="scss">
+
+    .news-item {
+        display: flex;
+        gap: 60px;
+        background-color: #ffffff;
+        margin: 20px 0;
+        padding: 32px;
+        border-radius: 20px;
+    }
+
+    .link-icon {
+        margin-left: auto;
+    }
+
+    @include max("tab"){
+        .news-list{
+            padding-inline: 40px;
+        }
+
+        .news-item{
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+</style>

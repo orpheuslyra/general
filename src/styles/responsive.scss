@@ -1,0 +1,33 @@
+$breakpoints: (
+  "zero": 0,
+  "sp": 360px,
+  "sp-l": 667px,
+  "tab": 768px,
+  "pc": 1024px,
+  "pc-l": 1120px,
+  "pc-2l": 1184px,
+  "pc-3l": 1344px,
+  "pc-4l": 1440px,
+  "pc-5l": 1520px,
+);
+
+@mixin min($breakpoint) {
+  /* stylelint-disable-next-line media-query-no-invalid */
+  @media screen and (width >= #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin max($breakpoint) {
+  /* stylelint-disable-next-line media-query-no-invalid */
+  @media screen and (width < #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin between($minBreakpoint, $maxBreakpoint) {
+  /* stylelint-disable-next-line media-query-no-invalid */
+  @media screen and (#{map-get($breakpoints, $minBreakpoint)} <= width < #{map-get($breakpoints, $maxBreakpoint)}) {
+    @content;
+  }
+}

@@ -1,0 +1,44 @@
+---
+import PhotoCard from "../../parts/card/PhotoCard.astro"
+
+interface Props {
+    stepNo: number;
+    imagePath: ImageMetadata;
+    title:string;
+    description:string;    
+}
+
+const props = Astro.props
+
+---
+
+<div class="step-card">
+    <div class="step-tag">
+        <div>STEP</div>
+        <div>{props.stepNo}</div>
+    </div>
+    <PhotoCard title={props.title} description={props.description} imagePath={props.imagePath}/>
+</div>
+
+<style lang="scss">
+    .step-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
+    .step-tag{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg,#002d5e 0%, #004298 100%);
+        color: white;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+</style>

@@ -1,28 +1,107 @@
 ---
+import ServiceImage from "@/assets/service/service-card.jpg"
+import ServiceImageSP from "@/assets/service/service-card_sp.jpg"
+import SalaryServiceImage from "@/assets/service/salaryServiceImage.png"
+import Steps from "./_component/Steps.astro";
+import Image from "astro/components/Image.astro";
+import HeadingOne from "../parts/heading/HeadingOne.astro";
+
 ---
-
-<section id="service">
-
-    <div class="section-title">
-        <h1>Service</h1>
+<HeadingOne heading="Service" sub="サービス" />
+<Image src={ServiceImage} alt="" class="service-kv-pc"/>
+<Image src={ServiceImageSP} alt="" class="service-kv-sp"/>
+<div class="service-content">
+    <div class="service-description-title">
+        社内ルールを大きく変えることなくアウトソーシング。<br class="pc-none"/>
+        伴奏型BPOで煩雑な給与計算業務から解放します。
     </div>
-    <div class="service-visual">
-        
+    <div class="service-description">
+        サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーです
     </div>
-
-</section>
+    <Image src={SalaryServiceImage} alt="" width={557} height={400} class="service-image"/>
+    <div class="service-explanation">
+        細かな指示は不要。適法性の担保・社内への対応もすべてゼネラルにおまかせください。
+    </div>
+</div>
+<Steps/>
+</div>
 
 <style lang="scss">
-    h1{
-        @include typography-pc-title-h1;
-        position: relative;
-        margin: 80px 0;
-        &::after{
-            content:'サービス';
-            position: absolute;
-            left: 0;
-            bottom: -20px;
-            @include typography-pc-subtitle;
+    .service-kv-pc{
+        width: 100%;
+    }
+
+    .service-kv-sp {
+        display: none;
+    }
+
+    .service-image {
+        margin: 50px 0;
+    }
+
+    .service-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .service-description-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: $text-blue;
+            margin: 80px 0 50px 0;
+            padding-inline: 100px;
+        }
+
+        .service-description {
+            padding-inline: 100px;
+        }
+        .service-explanation{
+            border-radius: 70px;
+            background-color: #ffffff;
+            margin: 60px 0;
+            padding: 30px 56px;
+            @include typography-pc-subtitle 
         }
     }
+
+
+@include max("tab"){
+    .pc-only {
+        display: none;
+    }
+
+    .service-kv-pc {
+        display: none;
+    }
+
+    .service-kv-sp {
+        display: block;
+        width: 100vw;
+    }
+
+    .service-content{
+        .service-description-title {
+            padding-inline: 0;
+            font-size: 20px;
+            margin: 40px 0 0;
+        }
+        .service-description{
+            padding-inline: 0;
+            margin: 32px 0 0;
+        }
+
+        .service-image{
+            margin-block: 40px;
+        }
+
+        .service-explanation{
+            padding: 20px 18px;
+            border-radius: 16px;
+            font-size: 16px;
+            margin: 0 0 40px;
+        }
+
+    }
+}
 </style>

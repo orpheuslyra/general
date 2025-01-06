@@ -4,13 +4,106 @@ import {Image} from 'astro:assets'
 ---
 
 <div class="header">
+    <Image src="/General.svg" alt="" width={100} height={21} />
     <Navigation/>
-</img>
+</div>
+
+<div class="header-sp">
+    <Image src="/General.svg" alt="" width={100} height={21} />
+    <div class="hamburger" aria-label="menu" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </div>
+</div>
+<div class="sp-navigation">
+    <Navigation />
+</div>
 
 <style lang="scss">
     .header{
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
         padding: 20px;
-        border-radius: 10px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
         background-color: white;
     }
+
+    .header-sp{
+        display: none;
+    }
+
+    .sp-navigation{
+        display: none;
+    }
+
+    @include max("tab"){
+        .header{
+            display: none;
+        }
+
+        .header-sp{
+            display: flex;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            background-color: white;
+            box-shadow: 0px 5px 5px #ccc;
+        }
+
+        .hamburger {
+            display: block;
+            position: static;
+            right: 20px;
+            width: 40px;
+            cursor: pointer;
+            .hamburger-bar{
+                display: block;
+                height: 2px;
+                background-color: #004691;
+                &:nth-of-type(2){
+                    transform: translateY(10px);
+                }
+                &:nth-of-type(3){
+                    transform: translateY(20px);
+                }
+            }
+            &.open{
+                .hamburger-bar{
+                    &:nth-of-type(1){
+                        opacity: 0;
+                    }
+                    &:nth-of-type(2){
+                        transform:translateY(10px) rotate(35deg);
+                        transition: all 0.5s ease;
+                    }
+                    &:nth-of-type(3){
+                        transform:translateY(8px) rotate(325deg);
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+
+        .sp-navigation{
+            display:block;
+            position: fixed;
+            z-index: 5;
+            top: -400px;
+            width: 100%;
+            &.open{                
+                transform: translateY(450px);
+                transition: all 0.5s ease;
+            }
+        }
+    }
+
 </style>

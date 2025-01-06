@@ -16,7 +16,8 @@ export default defineConfig({
           additionalData: `
             @import "@/styles/reset.scss";
             @import "@/styles/variants/_mixin.scss";
-            @import "@/styles/global.scss";`,
+            @import "@/styles/global.scss";
+            @import "@/styles/responsive.scss";`,
         },
       },
     },
