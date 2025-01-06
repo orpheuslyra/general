@@ -14,7 +14,7 @@ import Image from 'astro/components/Image.astro';
 <div class="container">
 	<main>
 		<div class="hero">
-			<div class="kv-text">
+			<div class="kv-text fade-in">
 				<span>BPO<span>×</span>AI</span>で<br />
 					給与計算にかかる<br />
 					社内リソースをゼロに。
@@ -69,6 +69,7 @@ import Image from 'astro/components/Image.astro';
 		top: 11vw;
 		left: 8.5vw;
 		letter-spacing: 5px;
+		color: #001d41;
 		> span {
 			font-size: 83px;
 			> span {
@@ -134,11 +135,9 @@ import Image from 'astro/components/Image.astro';
 
 	.keyvisual-sp{
 		display: block;
+		width: 100vw;
 	}
 
-	.hero {
-		
-	}
 
 	.kv-text{
 		position: relative;
