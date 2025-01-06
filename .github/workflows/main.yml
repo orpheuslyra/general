@@ -20,5 +20,6 @@ jobs:
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ${{ secrets.FTP_SERVER_DIR }}
+        local-dir: ./dist/
 
         exclude: "[**/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, .phpcs.xml.dist, **.json, **.map, **.scss, **.lock, postcss.config.js, **/src/**]"
