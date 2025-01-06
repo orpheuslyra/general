@@ -45,14 +45,22 @@ const props: Props = Astro.props;
                 color: white;
             }
         }
-        > .illust-description{
-                @include typography-pc-description;
-                padding: 20px 20px 40px;
-                max-height: 100px;
-                height: 10vw;
-                background-color: #ffffff;
-                border-bottom-left-radius: 20px;
-                border-bottom-right-radius: 20px;
+        .illust-description{
+            @include typography-pc-description;
+            padding: 20px 20px 40px;
+            max-height: 100px;
+            height: 10vw;
+            background-color: #ffffff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+    }
+
+    @include max("tab"){
+        .illust-card{
+            .illust-description{
+                height: 120px;
             }
+        }
     }
 </style>
