@@ -10,16 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          local-dir: ./dist/
+    - name: Use Node.js 20
+      uses: actions/setup-node@v3
+      with:
+          node-version: "20"
 
-          exclude: "[**/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, .phpcs.xml.dist, **.json, **.map, **.scss, **.lock, postcss.config.js, **/src/**]"
+    - name: Build Project # buildしないプロジェクトなら削除してOK
+      run: |
+          npm install
+          npm run build
+
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: ${{ secrets.FTP_SERVER_DIR }}
+        local-dir: ./dist/
+
+        exclude: "[**/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, .phpcs.xml.dist, **.json, **.map, **.scss, **.lock, postcss.config.js, **/src/**]"
