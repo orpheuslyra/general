@@ -1,15 +1,16 @@
 ---
-import Navigation from "./_components/Navigation.astro"
-import {Image} from 'astro:assets'
+import Navigation from "./_components/Navigation.astro";
+import GeneralLogo from "@/assets/logo/General.svg";
+import {Image} from 'astro:assets';
 ---
 
 <div class="header">
-    <Image src="/General.svg" alt="" width={100} height={21} />
+    <Image src={GeneralLogo} alt="" width={100} height={21} />
     <Navigation/>
 </div>
 
 <div class="header-sp">
-    <Image src="/General.svg" alt="" width={100} height={21} />
+    <Image src={GeneralLogo} alt="" width={100} height={21} />
     <div class="hamburger" aria-label="menu" aria-expanded="false">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
