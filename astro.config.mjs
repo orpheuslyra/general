@@ -1,9 +1,11 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import solid from "@astrojs/solid-js";
 
 export default defineConfig({
-  integrations: [solid()],
+  base: "",
+  build: {
+    assetsPrefix: ".", // すべてのアセットを相対パスに設定
+  },
   vite: {
     resolve: {
       alias: {
