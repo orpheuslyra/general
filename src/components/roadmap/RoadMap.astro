@@ -19,19 +19,42 @@ import HeadingThree from "../parts/heading/HeadingThree.astro";
     サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーです
 </div>
 <div class="phase-content-pc">
-    <Image src={Phase1Image} alt="" class="phase"/>
-    <Image src={Phase2Image} alt="" class="phase"/>
-    <Image src={Phase3Image} alt="" class="phase"/>
+    <Image src={Phase1Image} alt="" class="phase slideIn"/>
+    <Image src={Phase2Image} alt="" class="phase slideIn"/>
+    <Image src={Phase3Image} alt="" class="phase slideIn"/>
 </div>
 <div class="phase-content-sp">
-    <Image src={Phase1ImageSP} alt="" class="phase"/>
-    <Image src={Phase2ImageSP} alt="" class="phase"/>
-    <Image src={Phase3ImageSP} alt="" class="phase"/>
+    <Image src={Phase1ImageSP} alt="" class="phase slideIn"/>
+    <Image src={Phase2ImageSP} alt="" class="phase slideIn"/>
+    <Image src={Phase3ImageSP} alt="" class="phase slideIn"/>
 </div>
 
 <div>
 
 <style lang="scss">
+
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInTop {
+        from {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
     .service-explain{
         margin-block: 20px;
         max-width: 751px;
@@ -45,6 +68,16 @@ import HeadingThree from "../parts/heading/HeadingThree.astro";
         .phase{
             width: 33%;
             max-width: 405px;
+
+            &.slideIn {
+                opacity: 0;
+                transform: translateX(-100%);
+                transition: opacity 0.5s, transform 0.5s;
+            }
+
+            &.show{
+                animation: slideInLeft  0.5s forwards;
+            }
         }   
     }
 
@@ -62,6 +95,15 @@ import HeadingThree from "../parts/heading/HeadingThree.astro";
             .phase{
                 width: 100%;
                 max-width: 100%;
+                &.slideIn{
+                    opacity: 0;
+                    transform: translateY(-20px);
+                    transition: opacity 0.5s, transform 0.5s;
+                }
+
+                &.show{
+                    animation: slideInTop 0.5s forwards;
+                }
             }
         }
         .phase-content-pc {
