@@ -7,10 +7,12 @@ import Image from "astro/components/Image.astro";
 import HeadingOne from "../parts/heading/HeadingOne.astro";
 
 ---
-<HeadingOne heading="Service" sub="サービス" />
+<div class="section-title">
+    <HeadingOne heading="Service" sub="サービス" />
+</div>
 <Image src={ServiceImage} alt="" class="service-kv-pc"/>
 <Image src={ServiceImageSP} alt="" class="service-kv-sp"/>
-<div class="service-content">
+<div class="feature-content">
     <div class="service-description-title">
         社内ルールを大きく変えることなくアウトソーシング。<br class="pc-none"/>
         伴奏型BPOで煩雑な給与計算業務から解放します。
@@ -22,8 +24,7 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
     <div class="service-explanation">
         細かな指示は不要。適法性の担保・社内への対応もすべてゼネラルにおまかせください。
     </div>
-</div>
-<Steps/>
+    <Steps/>
 </div>
 
 <style lang="scss">
@@ -39,7 +40,7 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
         margin: 50px 0;
     }
 
-    .service-content{
+    .feature-content{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -67,6 +68,7 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
 
 
 @include max("tab"){
+
     .pc-only {
         display: none;
     }
@@ -80,7 +82,8 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
         width: 100vw;
     }
 
-    .service-content{
+    .feature-content{
+        padding-inline: 40px;
         .service-description-title {
             padding-inline: 0;
             font-size: 20px;
@@ -101,7 +104,6 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
             font-size: 16px;
             margin: 0 0 40px;
         }
-
     }
 }
 </style>

@@ -22,3 +22,15 @@ body {
     display: none;
   }
 }
+
+.section-title {
+  @include max("tab") {
+    padding-inline: 20px;
+  }
+}
+
+.feature-content {
+  @include max("tab") {
+    padding-inline: 40px;
+  }
+}

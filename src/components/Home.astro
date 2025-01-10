@@ -23,26 +23,26 @@ import Image from 'astro/components/Image.astro';
 			<Image src={keyVisualSp} alt="" class="keyvisual-sp"/>
 		</div>
 		<div class="main-content">
-			<section id="mission" class="fade-in">
+			<section id="mission" class="content-section fade-in">
 				<Mission/>
 			</section>
-			<section id="service" class="fade-in">
+			<section id="service" class="content-section fade-in">
 				<Service />
 			</section>
-			<section id="advantage" class="fade-in">
+			<section id="advantage" class="content-section fade-in">
 				<Advantage />
 			</section>
-			<section id="roadmap" class="fade-in">
+			<section id="roadmap" class="content-section fade-in">
 				<RoadMap />
 			</section>
 		</div>
 		<div class="news-content">
-			<section id="news" class="fade-in">
+			<section id="news" class="content-section fade-in">
 				<News />
 			</section>
 		</div>
 		<div class="member-content">
-			<section id="member" class="fade-in">
+			<section id="member" class="content-section fade-in">
 				<Member />
 			</section>
 		</div>
@@ -84,8 +84,13 @@ import Image from 'astro/components/Image.astro';
 	}
 
 	.main-content{
-		margin: 100px auto;
+		margin:0 auto;
 		max-width: 1240px;
+		padding-inline: 63px;
+	}
+
+	.content-section {
+		padding-block: 40px;
 	}
 
 	.news-content{
@@ -93,7 +98,6 @@ import Image from 'astro/components/Image.astro';
 		> #news{
 			margin: 0 auto;
 			max-width: 1240px;
-			padding: 80px 0;
 		}
 	}
 
@@ -107,6 +111,7 @@ import Image from 'astro/components/Image.astro';
   		opacity: 1;
   		transform: translateY(0);
 	}
+
 
 	.member-content{
 		padding: 0 63px 80px;
@@ -128,7 +133,6 @@ import Image from 'astro/components/Image.astro';
 
 
 @include max("tab"){
-
 	.keyvisual-pc{
 		display: none;
 	}
@@ -154,15 +158,19 @@ import Image from 'astro/components/Image.astro';
 	}
 
 	.main-content{
-		padding-inline: 40px;
+		padding-inline: 0;
 	}
 
-	.news-content{
-		padding-inline: 40px;
+	.content-section {
+		padding-block: 20px;
 	}
 
-	.member-content{
-		padding-inline: 40px;
+	.news-content {
+		padding-inline: 0;
+	}
+
+	.member-content {
+		padding-inline: 0;
 	}
 }
 </style>

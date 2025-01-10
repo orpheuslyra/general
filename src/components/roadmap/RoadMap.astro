@@ -12,23 +12,24 @@ import HeadingThree from "../parts/heading/HeadingThree.astro";
 ---
 <!--Phase1から3をスライドして出す -->
 
-<HeadingOne heading="Road map" sub="ロードマップ" />
-<HeadingThree heading="AIを活用し企業の安全な成長を支援するサービスへ" />
-
-<div class="service-explain">
-    サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーです
+<div class="section-title">
+    <HeadingOne heading="Road map" sub="ロードマップ" />
 </div>
-<div class="phase-content-pc">
-    <Image src={Phase1Image} alt="" class="phase slideIn"/>
-    <Image src={Phase2Image} alt="" class="phase slideIn"/>
-    <Image src={Phase3Image} alt="" class="phase slideIn"/>
-</div>
-<div class="phase-content-sp">
-    <Image src={Phase1ImageSP} alt="" class="phase slideIn"/>
-    <Image src={Phase2ImageSP} alt="" class="phase slideIn"/>
-    <Image src={Phase3ImageSP} alt="" class="phase slideIn"/>
-</div>
-
+<div class="feature-content">
+    <HeadingThree heading="AIを活用し企業の安全な成長を支援するサービスへ" />
+    <div class="service-explain">
+        サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーです
+    </div>
+    <div class="phase-content-pc">
+        <Image src={Phase1Image} alt="" class="phase slideIn"/>
+        <Image src={Phase2Image} alt="" class="phase slideIn"/>
+        <Image src={Phase3Image} alt="" class="phase slideIn"/>
+    </div>
+    <div class="phase-content-sp">
+        <Image src={Phase1ImageSP} alt="" class="phase slideIn"/>
+        <Image src={Phase2ImageSP} alt="" class="phase slideIn"/>
+        <Image src={Phase3ImageSP} alt="" class="phase slideIn"/>
+    </div>
 <div>
 
 <style lang="scss">
@@ -87,6 +88,9 @@ import HeadingThree from "../parts/heading/HeadingThree.astro";
 
     @include max("tab"){
 
+        .feature-content {
+            padding-inline: 40px;
+        }
         .phase-content-sp{
             display: flex;
             flex-direction: column;

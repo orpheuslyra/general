@@ -26,6 +26,12 @@ $text-blue: #001d41;
   color: $text-blue;
 }
 
+@mixin typography-sp-title-h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: $text-blue;
+}
+
 @mixin typography-pc-subtitle {
   font-size: 24px;
   font-weight: 700;
