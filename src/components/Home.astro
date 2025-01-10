@@ -1,48 +1,37 @@
 ---
-
+import Hero from './hero/Hero.astro';
 import Mission from './mission/Mission.astro';
 import Service from './service/Service.astro';
 import Advantage from './advantage/Advantage.astro';
 import RoadMap from './roadmap/RoadMap.astro';
 import News from './news/News.astro';
 import Member from './member/Member.astro';
-import keyVisual from "@/assets/keyvisual/keyVisual.jpg"
-import keyVisualSp from "@/assets/keyvisual/KeyVisual_sp.jpg"
-import Image from 'astro/components/Image.astro';
 ---
 
 <div class="container">
 	<main>
-		<div class="hero">
-			<div class="kv-text fade-in">
-				<span>BPO<span>×</span>AI</span>で<br />
-					給与計算にかかる<br />
-					社内リソースをゼロに。
-				</div>
-			<Image src={keyVisual} alt="" class="keyvisual-pc"/>
-			<Image src={keyVisualSp} alt="" class="keyvisual-sp"/>
-		</div>
+		<Hero/>
 		<div class="main-content">
-			<section id="mission" class="fade-in">
+			<section id="mission" class="content-section fade-in">
 				<Mission/>
 			</section>
-			<section id="service" class="fade-in">
+			<section id="service" class="content-section fade-in">
 				<Service />
 			</section>
-			<section id="advantage" class="fade-in">
+			<section id="advantage" class="content-section fade-in">
 				<Advantage />
 			</section>
-			<section id="roadmap" class="fade-in">
+			<section id="roadmap" class="content-section fade-in">
 				<RoadMap />
 			</section>
 		</div>
 		<div class="news-content">
-			<section id="news" class="fade-in">
+			<section id="news" class="content-section fade-in">
 				<News />
 			</section>
 		</div>
 		<div class="member-content">
-			<section id="member" class="fade-in">
+			<section id="member" class="content-section fade-in">
 				<Member />
 			</section>
 		</div>
@@ -57,35 +46,14 @@ import Image from 'astro/components/Image.astro';
 		height: 100%;
 	}
 
-	.hero {
-		position: relative;
-		transform: translateY(-15px);
-	}
-
-	.kv-text {
-		position: absolute;
-		font-size: 30px;
-		font-weight: 900;
-		top: 11vw;
-		left: 8.5vw;
-		letter-spacing: 5px;
-		color: #001d41;
-		> span {
-			font-size: 83px;
-			> span {
-				font-size: 60px;
-				font-weight: 100;
-			}
-		}
-	}
-
-	.keyvisual-sp{
-		display: none;
-	}
-
 	.main-content{
-		margin: 100px auto;
+		margin:0 auto;
 		max-width: 1240px;
+		padding-inline: 63px;
+	}
+
+	.content-section {
+		padding-block: 40px;
 	}
 
 	.news-content{
@@ -93,7 +61,6 @@ import Image from 'astro/components/Image.astro';
 		> #news{
 			margin: 0 auto;
 			max-width: 1240px;
-			padding: 80px 0;
 		}
 	}
 
@@ -117,52 +84,34 @@ import Image from 'astro/components/Image.astro';
 		}
 	}
 
-	.hero{
-		position: relative;
-		width: 100%;
-	}
-
 	#news {
 		background-color: #e8edf2;
 	}
 
 
 @include max("tab"){
-
-	.keyvisual-pc{
-		display: none;
-	}
+	
 
 	.keyvisual-sp{
 		display: block;
 		width: 100vw;
 	}
 
-	.kv-text{
-		position: relative;
-		top: unset;
-		left: unset;
-		padding: 50px 20px 20px;
-		font-size: 19px;
-		color: #001d41;
-		> span {
-			font-size: 40px;
-			>span{
-				font-size: 20px;
-			}
-		}
-	}
 
 	.main-content{
-		padding-inline: 40px;
+		padding-inline: 0;
 	}
 
-	.news-content{
-		padding-inline: 40px;
+	.content-section {
+		padding-block: 20px;
 	}
 
-	.member-content{
-		padding-inline: 40px;
+	.news-content {
+		padding-inline: 0;
+	}
+
+	.member-content {
+		padding-inline: 0;
 	}
 }
 </style>

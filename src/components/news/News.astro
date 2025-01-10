@@ -9,8 +9,11 @@ const formatDate = (date: Date): string => {
 }
 ---
 
-<HeadingOne heading="News" sub="ニュース" />
+<div class="section-title">
+    <HeadingOne heading="News" sub="ニュース" />
+</div>
 
+<div class="feature-content">
 <ul class="news-list">
     {newslist.map((news)=>(
         news.link ? (
@@ -29,7 +32,7 @@ const formatDate = (date: Date): string => {
         )
     ))}
 </ul>
-
+</div>
 
 <style lang="scss">
 
@@ -47,6 +50,9 @@ const formatDate = (date: Date): string => {
     }
 
     @include max("tab"){
+        .feature-content{
+            padding-inline: 40px;
+        }
 
         .news-item{
             flex-direction: column;
