@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".fade-in");
+
+  console.log(elements);
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
