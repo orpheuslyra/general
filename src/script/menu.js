@@ -23,15 +23,6 @@ menuItems.forEach((item) => {
   item.addEventListener("click", (event) => {
     const targetId = item.getAttribute("href").substring(1);
     const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      const offsetTop = targetElement.getBoundingClientRect().top;
-
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-
     navigation.classList.remove("open");
     navigation.classList.add("close");
     hamburger.classList.remove("open");
