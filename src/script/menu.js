@@ -5,17 +5,17 @@ const menuItems = document.querySelectorAll(".sp-navigation .link-ul li a");
 
 hamburger.addEventListener("click", () => {
   if (hamburger.classList.contains("open")) {
-    hamburger.classList.remove("open");
-    hamburger.classList.add("close");
     headerSp.classList.remove("open");
+    hamburger.classList.remove("open");
     navigation.classList.remove("open");
     navigation.classList.add("close");
+    hamburger.classList.add("close");
   } else {
-    hamburger.classList.remove("close");
     hamburger.classList.add("open");
     navigation.classList.add("open");
     headerSp.classList.add("open");
     navigation.classList.remove("close");
+    hamburger.classList.remove("close");
   }
 });
 
@@ -24,12 +24,8 @@ menuItems.forEach((item) => {
     const targetId = item.getAttribute("href").substring(1);
     const targetElement = document.getElementById(targetId);
 
-    console.log(targetId);
-    console.log(targetElement);
-
     if (targetElement) {
       const offsetTop = targetElement.getBoundingClientRect().top;
-      console.log(`Scrolling to ${targetId} at position: ${offsetTop}`); // デバッグ用出力
 
       targetElement.scrollIntoView({
         behavior: "smooth",

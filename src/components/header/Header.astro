@@ -66,17 +66,17 @@ import {Image} from 'astro:assets';
             display: block;
             position: static;
             right: 20px;
-            width: 40px;
+            width: 28px;
             cursor: pointer;
             .hamburger-bar{
                 display: block;
                 height: 2px;
                 background-color: #004691;
                 &:nth-of-type(2){
-                    transform: translateY(10px);
+                    transform: translateY(6px);
                 }
                 &:nth-of-type(3){
-                    transform: translateY(20px);
+                    transform: translateY(12px);
                 }
             }
             &.open{
@@ -85,11 +85,11 @@ import {Image} from 'astro:assets';
                         opacity: 0;
                     }
                     &:nth-of-type(2){
-                        transform:translateY(10px) rotate(35deg);
+                        transform:translateY(6px) rotate(35deg);
                         transition: all 0.5s ease;
                     }
                     &:nth-of-type(3){
-                        transform:translateY(8px) rotate(325deg);
+                        transform:translateY(4px) rotate(325deg);
                         transition: all 0.5s ease;
                     }
                 }
