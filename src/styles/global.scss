@@ -1,6 +1,18 @@
 @use "./responsive.scss" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+html {
+  scroll-padding-top: 64px;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+}
+
 body {
   font-family: "Noto sans JP";
 }
