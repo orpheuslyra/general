@@ -19,4 +19,14 @@ import Company from "./Company.astro"
         }
     }
 
+    @include max("tab"){
+        .about-company {
+            margin: 0 auto 40px;
+
+            > .description {
+                margin: 20px 0 0;
+            }
+        }
+    }
+
 </style>
