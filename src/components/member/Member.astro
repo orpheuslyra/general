@@ -15,7 +15,8 @@ import HeadingThree from "../parts/heading/HeadingThree.astro";
     {memberList.map((member)=>(
         <MemberCard 
             imagePath={member.imagePath}
-            name={member.name}
+            first_name={member.firstName}
+            second_name={member.secondName}
             role={member.role}
             post={member.post}
             company={member.company}

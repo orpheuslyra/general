@@ -3,87 +3,98 @@ import type { ImageMetadata } from "astro";
 import Image from "astro/components/Image.astro";
 
 interface Props {
-    imagePath:ImageMetadata;
-    post?:string;
-    name:string;
-    company:string;
-    role:string;
-};
+  imagePath: ImageMetadata;
+  post?: string;
+  second_name: string;
+  first_name: string;
+  company: string;
+  role?: string;
+}
 
-const props:Props = Astro.props;
+const props: Props = Astro.props;
 ---
+
 <div class="member-wrapper">
-    <Image src={props.imagePath} width={140} height={140} alt="" class="member-image"/>
-    <div class="name">
-        <p>
-            {props.post && (<span class="post">{props.post}</span>)}
-            {props.name}
-        </p>
-    </div>
-    <div class="company">{props.company}</div>
-    <div class="role">{props.role}</div>
+  <Image
+    src={props.imagePath}
+    width={140}
+    height={140}
+    alt=""
+    class="member-image"
+  />
+  <p class="name">
+    {props.post && <span class="post">{props.post}</span>}
+    <span class="second-name">{props.second_name}</span>
+    <span class="first-name">{props.first_name}</span>
+  </p>
+  <p class="company">
+    {props.company}{props.role && <span>{props.role}</span>}
+  </p>
 </div>
 
 <style lang="scss">
-    .member-wrapper{
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        max-width: 286px;
-        padding: 40px 24px;
-        background-color: #ffffff;
-        border-radius: 10px;
+  .member-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 286px;
+    padding: 40px 24px;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .member-image {
+    align-self: center;
+    margin-bottom: calc(24px - 5px);
+  }
+
+  .post {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .name {
+    font-size: 20px;
+    font-weight: 700;
+    > .first-name {
+      margin-left: 5px;
+    }
+  }
+
+  .company {
+    font-size: 14px;
+  }
+
+  .role {
+    font-size: 14px;
+  }
+
+  @include max("tab") {
+    .member-wrapper {
+      padding: 20px 15px;
+      gap: 0;
     }
 
-    .member-image{
-        align-self: center;
-        margin-bottom: calc(24px - 5px);
+    .member-image {
+      margin-bottom: 20px;
     }
 
-    .post{
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .name{
-        font-size: 20px;
-        font-weight: 700;
+    .name {
+      font-size: 15px;
+      margin-bottom: 20px;
     }
 
     .company {
-        font-size: 14px;
+      font-size: 12px;
     }
 
     .role {
-        font-size: 14px;
+      font-size: 12px;
     }
 
-    @include max("tab"){
-        .member-wrapper {
-            padding: 20px 15px;
-            gap: 0;
-        }
-
-        .member-image {
-            margin-bottom: 20px;
-        }
-
-        .name {
-            font-size: 15px;
-            margin-bottom: 20px;
-        }
-
-        .company{
-            font-size: 12px;
-        }
-
-        .role {
-            font-size: 12px;
-        }
-
-        .post{
-            display: block;
-            font-size: 12px;
-        }
+    .post {
+      display: block;
+      font-size: 12px;
     }
-</style> 
+  }
+</style>
