@@ -1,12 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".fade-in");
+  const spBreakPoint = 768;
 
-  console.log(elements);
+  if (window.innerWidth > spBreakPoint) {
+    document.querySelector(".hero-content").classList.add("show");
+  }
+
+  const elements = document.querySelectorAll(".fade-in");
+  const heroCopy = document.querySelector(".hero-copy");
+
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
+          if (entry.target === heroCopy) {
+            setTimeout(() => {
+              entry.target.classList.add("show");
+            }, 500);
+          } else {
+            entry.target.classList.add("show");
+          }
         }
       });
     },
