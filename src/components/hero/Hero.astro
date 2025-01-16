@@ -15,8 +15,8 @@ import Image from 'astro/components/Image.astro';
         <div class="hero-image">
             <Image src={keyVisual} alt="" class="keyvisual-pc" />
             <Image src={generalLogo} alt="" class="general-logo" />
+            <Image src={keyVisualSp} alt="" class="keyvisual-sp" />
         </div>
-        <Image src={keyVisualSp} alt="" class="keyvisual-sp" />
     </div>
 </div>
 
@@ -69,28 +69,33 @@ import Image from 'astro/components/Image.astro';
 				    font-weight: 100;
 			    }
 		    }
-        }
+    }
 
-        .keyvisual-pc {
+    .keyvisual-pc {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-        }
+    }
         
-        .keyvisual-sp{
+    .keyvisual-sp{
             display: none;
-        }
+    }
 
-        .general-logo {
+    .general-logo {
             position: absolute;
             bottom: 0;
             left: 32px;
-        }
+    }
 
 @include max("tab"){
     .hero-content {
         height: auto;
+    }
+
+    .hero-image {
+        height: auto;
+        max-height: unset;
     }
 
     .keyvisual-sp{
