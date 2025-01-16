@@ -4,14 +4,14 @@
 
 html {
   scroll-padding-top: 64px;
-  scroll-behavior: smooth;
+  scroll-behavior: scroll;
 }
 
 html,
 body {
   margin: 0;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {

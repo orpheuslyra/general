@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             entry.target.classList.add("show");
           }
+          entry.target.classList.add("show");
         }
       });
     },
