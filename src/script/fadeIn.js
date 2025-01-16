@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const spBreakPoint = 768;
 
   if (window.innerWidth > spBreakPoint) {
-    document.querySelector(".hero-content").classList.add("show");
+    document.querySelector(".hero-image").classList.add("show");
   }
 
   const elements = document.querySelectorAll(".fade-in");

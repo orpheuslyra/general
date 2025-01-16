@@ -12,25 +12,35 @@ import Image from 'astro/components/Image.astro';
                 給与計算にかかる<br />
                 社内リソースをゼロに。
         </div>
-        <Image src={keyVisual} alt="" class="keyvisual-pc" />
-        <Image src={generalLogo} alt="" class="general-logo" />
+        <div class="hero-image">
+            <Image src={keyVisual} alt="" class="keyvisual-pc" />
+            <Image src={generalLogo} alt="" class="general-logo" />
+        </div>
         <Image src={keyVisualSp} alt="" class="keyvisual-sp" />
     </div>
 </div>
 
 <style lang="scss">
-    .hero-content{
+    
+    .hero-image {
         position: relative;
-        height: 700px;
+        height: 78vw;
+        max-height: 800px;
         transform: translateY(-15px);
-        &::after{
+        z-index: -1;
+        > .general-logo {
+            position: absolute;
+            bottom: 0;
+        }
+        &::after {
             position: absolute;
             display: block;
             content: "";
             top: 0;
             opacity: 0.5;
             width: 100%;
-            height: 700px;
+            height: 78vw;
+            max-height: 800px;
             background-color: white;
             transition: transform 1s ease;
             transform: translateX(0%);
@@ -42,7 +52,6 @@ import Image from 'astro/components/Image.astro';
         &.show::after{
             transform: translateX(100%);
         }
-
     }
 
     .hero-copy {
@@ -50,7 +59,7 @@ import Image from 'astro/components/Image.astro';
     	font-size: 30px;
 		font-weight: 900;
 		    top: 198px;
-		    left: 183px;
+		    left: 10vw;
 		    letter-spacing: 5px;
 		    color: #001d41;
 		    > span {
