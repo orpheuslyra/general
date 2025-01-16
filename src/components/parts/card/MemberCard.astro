@@ -17,8 +17,6 @@ const props: Props = Astro.props;
 <div class="member-wrapper">
   <Image
     src={props.imagePath}
-    width={140}
-    height={140}
     alt=""
     class="member-image"
   />
@@ -46,6 +44,7 @@ const props: Props = Astro.props;
   .member-image {
     align-self: center;
     margin-bottom: calc(24px - 5px);
+    width: 140px;
   }
 
   .post {
