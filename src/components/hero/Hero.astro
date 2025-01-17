@@ -31,6 +31,8 @@ import Image from 'astro/components/Image.astro';
         > .general-logo {
             position: absolute;
             bottom: 0;
+            width: 50vw;
+            max-width: 862px;
         }
         &::after {
             position: absolute;
@@ -58,8 +60,8 @@ import Image from 'astro/components/Image.astro';
         position: absolute;
     	font-size: 30px;
 		font-weight: 900;
-		    top: 198px;
-		    left: 10vw;
+		    top: clamp(100px, 20vw, 198px);
+		    left: clamp(150px, 10vw, 168px);
 		    letter-spacing: 5px;
 		    color: #001d41;
 		    > span {
