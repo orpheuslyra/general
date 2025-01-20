@@ -63,7 +63,7 @@ export const memberList: memberData[] = [
     post: "社外取締役",
     firstName: "彰",
     secondName: "末廣",
-    company: "あいおいニッセイ同和損保中核代理店株式会社ハンズ",
+    company: "株式会社ハンズ",
     role: "取締役会長",
   },
   {
