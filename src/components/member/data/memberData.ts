@@ -1,4 +1,12 @@
 import defaultImage from "@/assets/member/defaultImage.png";
+import imadaPhoto from "@/assets/member/imada.jpg"; 
+import kimotoPhoto from "@/assets/member/kimoto.jpg";
+import teramotoPhoto from "@/assets/member/teramoto.jpg";
+import banPhoto from "@/assets/member/ban.jpg";
+import ogasawaraPhoto from "@/assets/member/ogasawara.jpg";
+import kanedaPhoto from "@/assets/member/kaneda.jpg";
+import suehiroPhoto from "@/assets/member/suehiro.jpg";
+import satoPhoto from "@/assets/member/sato.jpg";
 
 export type memberData = {
   imagePath: ImageMetadata;
@@ -11,7 +19,7 @@ export type memberData = {
 
 export const memberList: memberData[] = [
   {
-    imagePath: defaultImage,
+    imagePath: imadaPhoto,
     post: "代表取締役",
     firstName: "真吾",
     secondName: "今田",
@@ -19,7 +27,7 @@ export const memberList: memberData[] = [
     role: "経営執行役員",
   },
   {
-    imagePath: defaultImage,
+    imagePath: kimotoPhoto,
     post: "取締役",
     firstName: "美智",
     secondName: "木本",
@@ -27,7 +35,7 @@ export const memberList: memberData[] = [
     role: "代表社員",
   },
   {
-    imagePath: defaultImage,
+    imagePath: teramotoPhoto,
     post: "取締役",
     firstName: "健太郎",
     secondName: "寺本",
@@ -35,7 +43,7 @@ export const memberList: memberData[] = [
     role: "代表社員",
   },
   {
-    imagePath: defaultImage,
+    imagePath: banPhoto,
     post: "取締役",
     firstName: "芳夫",
     secondName: "伴",
@@ -43,7 +51,7 @@ export const memberList: memberData[] = [
     role: "代表社員",
   },
   {
-    imagePath: defaultImage,
+    imagePath: ogasawaraPhoto,
     post: "取締役",
     firstName: "弓子",
     secondName: "小笠原",
@@ -51,7 +59,7 @@ export const memberList: memberData[] = [
     role: "人事執行役員",
   },
   {
-    imagePath: defaultImage,
+    imagePath: kanedaPhoto,
     post: "取締役",
     firstName: "洸希",
     secondName: "金田",
@@ -59,7 +67,7 @@ export const memberList: memberData[] = [
     role: "コンサル部部長",
   },
   {
-    imagePath: defaultImage,
+    imagePath: suehiroPhoto,
     post: "社外取締役",
     firstName: "彰",
     secondName: "末廣",
@@ -67,7 +75,7 @@ export const memberList: memberData[] = [
     role: "取締役会長",
   },
   {
-    imagePath: defaultImage,
+    imagePath: satoPhoto,
     post: "AIパートナー",
     firstName: "洋介",
     secondName: "佐藤",
