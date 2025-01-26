@@ -15,11 +15,7 @@ const props: Props = Astro.props;
 ---
 
 <div class="member-wrapper">
-  <Image
-    src={props.imagePath}
-    alt=""
-    class="member-image"
-  />
+  <Image src={props.imagePath} alt="" class="member-image" />
   <p class="name">
     {props.post && <span class="post">{props.post}</span>}
     <span class="second-name">{props.second_name}</span>
@@ -44,7 +40,9 @@ const props: Props = Astro.props;
   .member-image {
     align-self: center;
     margin-bottom: calc(24px - 5px);
-    width: 140px;
+    width: 100%;
+    max-width: 140px;
+    height: auto;
   }
 
   .post {
@@ -70,13 +68,13 @@ const props: Props = Astro.props;
 
   @include max("tab") {
     .member-wrapper {
-      padding: 20px 15px;
+      padding: 20px 30px;
       gap: 0;
     }
 
     .member-image {
       margin-bottom: 20px;
-      height: auto;
+      max-width: 80px;
     }
 
     .name {
