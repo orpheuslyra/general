@@ -1,54 +1,58 @@
 ---
-import {advantages} from "./data/advantage";
+import { advantages } from "./data/advantage";
 import PhotoCard from "../parts/card/PhotoCard.astro";
 import HeadingOne from "../parts/heading/HeadingOne.astro";
 import HeadingThree from "../parts/heading/HeadingThree.astro";
 import AdvantageCard from "../parts/card/AdvantageCard.astro";
 ---
+
 <div class="section-title">
-    <HeadingOne heading="Advantage" sub="ゼネラルの強み"/>
+  <HeadingOne heading="Advantage" sub="ゼネラルの強み" />
 </div>
 
 <div class="feature-content">
-    <div class="feature-heading">
-        <HeadingThree heading="見出しが入ります" />
-    </div>
-    <div class="advantage-feature">
-    {advantages.map((data) => (
-        <AdvantageCard 
-        title={data.title} 
-        description={data.description}
-        imagePath={data.imagePath}
-        backgroundColor={["#002D5E", "#004298"]}
+  <div class="feature-heading">
+    <HeadingThree
+      heading="社労士の専門性とAI技術で支える効率的な業務アウトソーシング"
+    />
+  </div>
+  <div class="advantage-feature">
+    {
+      advantages.map((data) => (
+        <AdvantageCard
+          title={data.title}
+          description={data.description}
+          imagePath={data.imagePath}
+          backgroundColor={["#002D5E", "#004298"]}
         />
-    ))}
-    </div>
+      ))
+    }
+  </div>
 </div>
 
 <style lang="scss">
-    .feature-content{
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    > .advantage-feature {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  @include max("tab") {
+    .feature-content {
+      flex-direction: column;
+      align-items: center;
+      > .feature-heading {
+        align-self: flex-start;
+      }
+      > .advantage-feature {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-
-        >.advantage-feature{
-            display: flex;
-            gap: 20px;
-        }
+      }
     }
-
-    @include max("tab"){
-        .feature-content{
-            flex-direction: column;
-            align-items: center;
-            > .feature-heading{
-                align-self: flex-start;
-            }
-            > .advantage-feature {
-                display: flex;
-                flex-direction: column;
-            }
-
-        }
-    }
+  }
 </style>
