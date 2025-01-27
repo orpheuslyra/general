@@ -6,7 +6,7 @@ export type newsData = {
 
 export const newslist: newsData[] = [
   {
-    date: new Date(2025, 1, 28),
+    date: new Date(2025, 0, 28),
     title: "WEBサイトを公開しました。",
   },
 ];
