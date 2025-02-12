@@ -8,64 +8,115 @@ import Phase3Image from "@/assets/roadmap/phase3.png";
 import Phase3ImageSP from "@/assets/roadmap/phase3_sp.png";
 import HeadingOne from "../parts/heading/HeadingOne.astro";
 import HeadingThree from "../parts/heading/HeadingThree.astro";
-
 ---
+
 <!--Phase1から3をスライドして出す -->
-
-<HeadingOne heading="Road map" sub="ロードマップ" />
-<HeadingThree heading="AIを活用し企業の安全な成長を支援するサービスへ" />
-
-<div class="service-explain">
-    サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーですダミーコピーですダミーコピーですダミーコピーです。サービス概要の説明コピーが入ります。ダミーコピーです
+<div class="section-title">
+  <HeadingOne heading="Road map" sub="ロードマップ" />
 </div>
-<div class="phase-content-pc">
-    <Image src={Phase1Image} alt="" class="phase"/>
-    <Image src={Phase2Image} alt="" class="phase"/>
-    <Image src={Phase3Image} alt="" class="phase"/>
-</div>
-<div class="phase-content-sp">
-    <Image src={Phase1ImageSP} alt="" class="phase"/>
-    <Image src={Phase2ImageSP} alt="" class="phase"/>
-    <Image src={Phase3ImageSP} alt="" class="phase"/>
-</div>
+<div class="feature-content">
+  <HeadingThree heading="AIを活用し企業の安全な成長を支援するサービスへ。" />
+  <div class="service-explain">
+    <p>
+      BPO業務にAIを導入して生産性を大幅に向上させ、得られた情報で顧客のリスクや組織を可視化します。さらに、AI分析を通じてリスクの未然防止と企業成長を支援し、持続的な発展に貢献します。
+    </p>
+  </div>
+  <div class="phase-content-pc">
+    <Image src={Phase1Image} alt="" class="phase slideIn" />
+    <Image src={Phase2Image} alt="" class="phase slideIn" />
+    <Image src={Phase3Image} alt="" class="phase slideIn" />
+  </div>
+  <div class="phase-content-sp">
+    <Image src={Phase1ImageSP} alt="" class="phase slideIn" />
+    <Image src={Phase2ImageSP} alt="" class="phase slideIn" />
+    <Image src={Phase3ImageSP} alt="" class="phase slideIn" />
+  </div>
+  <div>
+    <style lang="scss">
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
 
-<div>
+      @keyframes slideInTop {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
 
-<style lang="scss">
-    .service-explain{
+      .service-explain {
         margin-block: 20px;
         max-width: 751px;
-    }
+        @include typography-pc-description;
+      }
 
-    .phase-content-pc{
+      .phase-content-pc {
         display: flex;
         margin: 50px 0;
         justify-content: center;
 
-        .phase{
-            width: 33%;
-            max-width: 405px;
-        }   
-    }
+        .phase {
+          width: 33%;
+          max-width: 405px;
 
-    .phase-content-sp{
+          &.slideIn {
+            opacity: 0;
+            transform: translateX(-100%);
+            transition:
+              opacity 0.5s,
+              transform 0.5s;
+          }
+
+          &.show {
+            animation: slideInLeft 0.5s forwards;
+          }
+        }
+      }
+
+      .phase-content-sp {
         display: none;
-    }
+      }
 
-    @include max("tab"){
+      @include max("tab") {
+        .feature-content {
+          padding-inline: 40px;
+        }
+        .phase-content-sp {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
-        .phase-content-sp{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .phase{
-                width: 100%;
-                max-width: 100%;
+          .phase {
+            width: 100%;
+            max-width: 100%;
+            &.slideIn {
+              opacity: 0;
+              transform: translateY(-20px);
+              transition:
+                opacity 0.5s,
+                transform 0.5s;
             }
+
+            &.show {
+              animation: slideInTop 0.5s forwards;
+            }
+          }
         }
         .phase-content-pc {
-               display: none;
-            }
-    }
-</style>
+          display: none;
+        }
+      }
+    </style>
+  </div>
+</div>

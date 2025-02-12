@@ -1,0 +1,131 @@
+---
+import keyVisual from "@/assets/keyvisual/keyVisual.jpg";
+import keyVisualSp from "@/assets/keyvisual/KeyVisual_sp.jpg";
+import generalLogo from "@/assets/keyvisual/general_logo.svg";
+import Image from 'astro/components/Image.astro';
+---
+
+<div class="top-hero">
+    <div class="hero-content">
+        <div class="hero-copy fade-in">
+            <span>BPO<span>×</span>AI</span>で<br />
+                給与計算にかかる<br />
+                社内リソースをゼロに。
+        </div>
+        <div class="hero-image">
+            <Image src={keyVisual} alt="" class="keyvisual-pc" />
+            <Image src={generalLogo} alt="" class="general-logo" />
+            <Image src={keyVisualSp} alt="" class="keyvisual-sp" />
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    
+    .hero-image {
+        position: relative;
+        height: 50vw;
+        max-height: 800px;
+        z-index: -1;
+        margin-top: -15px;
+        > .general-logo {
+            position: absolute;
+            bottom: 0;
+            width: 50vw;
+            max-width: 862px;
+        }
+        &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            top: 0;
+            opacity: 0.5;
+            width: 100%;
+            height: 78vw;
+            max-height: 800px;
+            background-color: white;
+            transition: transform 1s ease;
+            transform: translateX(0%);
+
+            @include max("tab"){
+                display: none;
+            }
+        }
+        &.show::after{
+            transform: translateX(100%);
+        }
+    }
+
+    .hero-copy {
+        position: absolute;
+    	font-size: 30px;
+		font-weight: 900;
+		    top: clamp(100px, 20vw, 198px);
+		    left: clamp(150px, 10vw, 168px);
+		    letter-spacing: 5px;
+		    color: #001d41;
+		    > span {
+			    font-size: 83px;
+			    > span {
+				    font-size: 60px;
+				    font-weight: 100;
+			    }
+		    }
+    }
+
+    .keyvisual-pc {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+    }
+        
+    .keyvisual-sp{
+            display: none;
+    }
+
+    .general-logo {
+            position: absolute;
+            bottom: 0;
+            left: 32px;
+    }
+
+@include max("tab"){
+    .hero-content {
+        height: auto;
+    }
+
+    .hero-image {
+        height: auto;
+        max-height: unset;
+    }
+
+    .keyvisual-sp{
+        display: block;
+    }
+
+    .general-logo {
+        display: none;
+    }
+
+    .keyvisual-pc {
+        display: none;
+    }
+
+	.hero-copy{
+		position: relative;
+		top: unset;
+		left: unset;
+		padding: 50px 20px 20px;
+		font-size: 19px;
+		color: #001d41;
+		> span {
+			font-size: 40px;
+			>span{
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+</style>

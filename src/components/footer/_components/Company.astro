@@ -11,6 +11,12 @@ import {companyInfo} from "../../../constants/about/companyInfo"
                 <td class="info-data">{item.value}</td>
             </tr>
             ))}
+            <tr>
+                <th class="info-label">お問合せ</th>
+                <td class="info-data">
+                    <a href="http://forms.gle/xMnkoDKphxXM8ZY48" target="_blank" rel="noopener noreferrer">お問合せフォーム</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
@@ -31,6 +37,15 @@ import {companyInfo} from "../../../constants/about/companyInfo"
     }
     .info-data{
         color: white;
+        > a {
+            text-decoration: underline;
+        }
+    }
+
+    @include max("tab"){
+        .info-label{
+            width: 40%;
+        }
     }
 </style>
 

@@ -5,12 +5,16 @@ import {Image} from 'astro:assets';
 ---
 
 <div class="header">
-    <Image src={GeneralLogo} alt="" width={100} height={21} />
+    <a href="#top">
+        <Image src={GeneralLogo} alt="" width={100} height={21} />
+    </a>
     <Navigation/>
 </div>
 
 <div class="header-sp">
-    <Image src={GeneralLogo} alt="" width={100} height={21} />
+    <a href="#top">
+        <Image src={GeneralLogo} alt="" width={100} height={21} />
+    </a>
     <div class="hamburger" aria-label="menu" aria-expanded="false">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
@@ -57,24 +61,26 @@ import {Image} from 'astro:assets';
             border-bottom-right-radius: 20px;
             border-bottom-left-radius: 20px;
             background-color: white;
-            box-shadow: 0px 5px 5px #ccc;
+            &.open{
+                box-shadow: 0px 5px 5px #ccc;
+            }
         }
 
         .hamburger {
             display: block;
             position: static;
             right: 20px;
-            width: 40px;
+            width: 28px;
             cursor: pointer;
             .hamburger-bar{
                 display: block;
                 height: 2px;
                 background-color: #004691;
                 &:nth-of-type(2){
-                    transform: translateY(10px);
+                    transform: translateY(6px);
                 }
                 &:nth-of-type(3){
-                    transform: translateY(20px);
+                    transform: translateY(12px);
                 }
             }
             &.open{
@@ -83,13 +89,29 @@ import {Image} from 'astro:assets';
                         opacity: 0;
                     }
                     &:nth-of-type(2){
-                        transform:translateY(10px) rotate(35deg);
+                        transform:translateY(6px) rotate(35deg);
                         transition: all 0.5s ease;
                     }
                     &:nth-of-type(3){
-                        transform:translateY(8px) rotate(325deg);
+                        transform:translateY(4px) rotate(325deg);
                         transition: all 0.5s ease;
                     }
+                }
+            }
+            &.close{
+                .hamburger{
+                    &:nth-of-type(1){
+                        opacity: 1;
+                    }
+                    &:nth-of-type(2){
+                        transform:translateY(-10px) rotate(-35deg);
+                        transition: all 0.5s ease;
+                    }
+                    &:nth-of-type(3){
+                        transform:translateY(-8px) rotate(-325deg);
+                        transition: all 0.5s ease;
+                    }
+
                 }
             }
         }
@@ -102,6 +124,11 @@ import {Image} from 'astro:assets';
             width: 100%;
             &.open{                
                 transform: translateY(450px);
+                transition: all 0.5s ease;
+            }
+
+            &.close{
+                transform: translateY(-450px);
                 transition: all 0.5s ease;
             }
         }

@@ -38,8 +38,8 @@ const props: Props = Astro.props
         }
 
         .description-area {
-            padding: 20px;
-            height: 182px;
+            padding: 20px 30px;
+            min-height: 140px;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
             background: linear-gradient(to right, #002D5E, #004298);
@@ -48,10 +48,19 @@ const props: Props = Astro.props
             .card-title{
                 @include typography-pc-subtitle;
                 color: #ffffff;
-                padding-block: 20px;
+                padding-bottom: 20px;
             }
         }
     }
-
+    @include max("tab"){
+        .photo-card {
+            .description-area {
+                padding: 20px;
+                .card-title {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
 
 </style>

@@ -13,4 +13,10 @@ const props: Props = Astro.props;
     h3 {
         @include typography-pc-title-h3;
     }
+
+    @include max("tab"){
+        h3{
+            @include typography-sp-title-h3;
+        }
+    }
 </style>
