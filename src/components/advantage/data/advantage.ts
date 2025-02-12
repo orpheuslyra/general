@@ -22,9 +22,9 @@ export const advantages: advantageData[] = [
     imagePath: aidevelopImage,
   },
   {
-    title: "業界随一の3刀流",
+    title: "導入〜運用までワンストップ",
     description:
-      "ルール・システム・運用を企画から実行までを全て対応、企業の非コア最小化を実現。",
+      "会社に合わせたルール・システム・運用をトータルで支援。企業の非コア最小化を実現。",
     imagePath: threeswordImage,
   },
 ];
