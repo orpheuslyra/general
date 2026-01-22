@@ -7,7 +7,7 @@ interface Props {
 const { text, url } = Astro.props;
 ---
 
-<a href={url}>
+<a href={url} target="_blank" rel="noopener noreferrer">
   <div class="link-button" set:html={text} />
 </a>
 
