@@ -1,5 +1,6 @@
 $blue: #002d5e;
 $text-blue: #001d41;
+$light-blue: #004691;
 
 @mixin typography-pc-title-h1 {
   font-size: 100px;
@@ -41,4 +42,16 @@ $text-blue: #001d41;
 @mixin typography-pc-description {
   font-size: 16px;
   color: $text-blue;
+}
+
+@mixin typography-pc-explanation {
+  font-size: 24px;
+  color: $light-blue;
+  font-weight: 700;
+}
+
+@mixin typography-sp-explanation {
+  font-size: 16px;
+  color: $light-blue;
+  font-weight: 700;
 }

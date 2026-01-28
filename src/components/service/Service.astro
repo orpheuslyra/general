@@ -1,10 +1,12 @@
 ---
 import ServiceImage from "@/assets/service/service-card.jpg";
 import ServiceImageSP from "@/assets/service/service-card_sp.jpg";
-import SalaryServiceImage from "@/assets/service/salaryServiceImage.png";
+import DCPartnerImage from "@/assets/service/dc_partner.png";
+import DCPartnerImageSP from "@/assets/service/dc_partner_sp.png";
 import Steps from "./_component/Steps.astro";
 import Image from "astro/components/Image.astro";
 import HeadingOne from "../parts/heading/HeadingOne.astro";
+import LinkButton from "../parts/button/LinkButton.astro";
 ---
 
 <div class="section-title">
@@ -22,7 +24,22 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
   </div>
   <Steps />
 </div>
-
+<Image src={DCPartnerImage} alt="" class="service-kv-pc" />
+<Image src={DCPartnerImageSP} alt="" class="service-kv-sp" />
+<div class="feature-content">
+  <div class="service-description-title text-position">
+    企業型DCは、税制優遇を活かした資産づくりで<br class="pc-only" />
+    従来の将来不安を軽減し、<br class="pc-only" />
+    定着率・採用力の向上に貢献する精度です。<br class="pc-only" />
+  </div>
+  <div class="service-explanation">
+    ゼネラルが、制度設計から従業員への投資教育、運用代行までをワンストップで支援します。
+  </div>
+  <LinkButton
+    text="企業型DC <span>（企業型確定拠出年金）</span>パートナープログラムについて ＞ "
+    url="https://dc.general-bpo.com/company?utm_source=general&utm_medium=referral&utm_campaign=campaign202601"
+  />
+</div>
 <style lang="scss">
   .service-kv-pc {
     width: 100%;
@@ -43,19 +60,23 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
     align-items: center;
 
     .service-description-title {
+      @include typography-pc-subtitle;
       font-size: 40px;
       font-weight: 700;
-      color: $text-blue;
       margin-top: 80px;
       padding-inline: 100px;
+
+      &.text-position {
+        text-align: center;
+      }
     }
 
     .service-explanation {
+      @include typography-pc-explanation;
       border-radius: 70px;
       background-color: #ffffff;
       margin: 60px 0;
       padding: 30px 56px;
-      @include typography-pc-subtitle;
     }
   }
 
@@ -75,10 +96,15 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
 
     .feature-content {
       padding-inline: 40px;
+
       .service-description-title {
         padding-inline: 0;
         font-size: 20px;
         margin: 40px 0 0;
+
+        &.text-position {
+          text-align: left;
+        }
       }
       .service-description {
         padding-inline: 0;
@@ -94,6 +120,7 @@ import HeadingOne from "../parts/heading/HeadingOne.astro";
         border-radius: 16px;
         font-size: 16px;
         margin: 40px 0;
+        color: #004691;
       }
     }
   }
